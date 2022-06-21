@@ -13,7 +13,7 @@ async function main() {
   const usdt = "0x9bd522cc85bd1bd6d069d5e273e46ccfee905493";
   const govAddress = "0x28493E97F18b1b4Bb0b95507a876ED458AF27494"
   const autoTokenFarm = "0x84600C18ca1B7EC74a5369F593e30d4F22B007ee"
-  const wantAddress = "0xf26cdd542d489c0eb37e8a84a60c6961beca807a"; // usdt-DAI LP token in Capricorn Swap
+  const wantAddress = "0x3d7df35d06e1746900be3725d201523189ae4ce1"; // usdt-DAI LP token in Capricorn Swap
   const masterChefFarmAdd = "0x6273638e3be5770851e23bfce27d69592bedcd2c"
   const routerAdd = "0x14C02Dc9B29aC28e852F740CBA6722BC7308fEB8"
   const rewardAdd = "0x7368ea4b5A7204CFe592d096D4CdC8832f754027"
