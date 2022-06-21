@@ -78,7 +78,7 @@ contract AutoFarmV2 is Ownable, ReentrancyGuard {
     }
 
     address public AUTO = 0x4508ABB72232271e452258530D4Ed799C685eccb; // 1:1 migration to AUTOv2
-    address public AUTOv2 = 0xa184088a740c695E156F91f5cC086a06bb78b827;
+    address public AUTOv2 = 0x579708F958492765b8A1EC98D4c8225E5F6cF8e0;
 
     address public burnAddress = 0x000000000000000000000000000000000000dEaD;
 

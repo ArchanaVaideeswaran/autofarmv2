@@ -1,31 +1,46 @@
-# System Description
+# Advanced Sample Hardhat Project
 
-Autofarm is a Decentralized Application (DApp) running on Binance Smart Chain (BSC), Huobi ECO Chain (HECO) & Polygon (previously Matic network). AUTO is Binance-listed and has gone through several rounds of auditing by CertiK and SlowMist.
+This project demonstrates an advanced Hardhat use case, integrating other tools commonly used alongside Hardhat in the ecosystem.
 
+The project comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts. It also comes with a variety of other tools, preconfigured to work with the project code.
 
-# Code
+Try running some of the following tasks:
 
-## AUTOv2 Token
-Upgraded version of the AUTO token was committed on 22nd January 2021.
+```shell
+npx hardhat accounts
+npx hardhat compile
+npx hardhat clean
+npx hardhat test
+npx hardhat node
+npx hardhat help
+REPORT_GAS=true npx hardhat test
+npx hardhat coverage
+npx hardhat run scripts/deploy.ts
+TS_NODE_FILES=true npx ts-node scripts/deploy.ts
+npx eslint '**/*.{js,ts}'
+npx eslint '**/*.{js,ts}' --fix
+npx prettier '**/*.{json,sol,md}' --check
+npx prettier '**/*.{json,sol,md}' --write
+npx solhint 'contracts/**/*.sol'
+npx solhint 'contracts/**/*.sol' --fix
+```
 
-## Timelock
-Timelock contract of all function calls set to 24 hours & functions that interact with the main contract and/or vaults that do not require a timelock include:
+# Etherscan verification
 
-add() — Add a new pool with 0 AUTO allocation.  
-set() — Increase/decrease AUTO Allocation (12h timelock)       
-earn()  
-farm()  
-pause()  
-unpause()
+To try out Etherscan verification, you first need to deploy a contract to an Ethereum network that's supported by Etherscan, such as Ropsten.
 
-## Rewards Distributor
+In this project, copy the .env.example file to a file named .env, and then edit it to fill in the details. Enter your Etherscan API key, your Ropsten node URL (eg from Alchemy), and the private key of the account which will send the deployment transaction. With a valid .env file in place, first deploy your contract:
 
-Code is used for the distribution of AUTOv2 tokens on non-BSC chains (do not have direct AUTOv2 emissions).
+```shell
+hardhat run --network ropsten scripts/deploy.ts
+```
 
-## AutoFarmV2
+Then, copy the deployment address and paste it in to replace `DEPLOYED_CONTRACT_ADDRESS` in this command:
 
-Main Autofarm contract which handles AUTO emissions and all deposits and withdrawals.
+```shell
+npx hardhat verify --network ropsten DEPLOYED_CONTRACT_ADDRESS "Hello, Hardhat!"
+```
 
-## AutoSwap
+# Performance optimizations
 
-DEX Aggregator function of Autofarm ecosystem.
+For faster runs of your tests and scripts, consider skipping ts-node's type checking by setting the environment variable `TS_NODE_TRANSPILE_ONLY` to `1` in hardhat's environment. For more details see [the documentation](https://hardhat.org/guides/typescript.html#performance-optimizations).

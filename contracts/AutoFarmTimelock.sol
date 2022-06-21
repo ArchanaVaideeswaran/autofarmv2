@@ -569,7 +569,7 @@ contract TimelockController is AccessControl, ReentrancyGuard {
      */
     function withdrawBNB() public payable {
         require(msg.sender == devWalletAddress, "!devWalletAddress");
-        devWalletAddress.safeTransfer(address(this).balance);
+        devWalletAddress.transfer(address(this).balance);
     }
 
     function withdrawBEP20(address _tokenAddress) public payable {
