@@ -1,40 +1,45 @@
 import { ethers } from "hardhat";
-import { ucs2 } from "punycode";
-import { AUTOv2 } from "../src/types/AUTOv2";
-
 const autotoken = require("../abis/auto.js");
 
 async function main() {
   const [signer] = await ethers.getSigners();
   console.log("Deployer: ", signer.address);
   const strat = await ethers.getContractFactory("StratX2_PCS");
-  
+  const dai ="0xdf443238d7b80446c3b3e76a556a354670da0205";
   const corn = "0x1cc23571ec9dc62b8f80bf5c5e13ea035ce0c49b";
   const wcube = "0xb9164670a2f388d835b868b3d0d441fa1be5bb00";
-  const tenfi = "0xa3DD6beDb8A7CA5d459Ccc488b7Fd0dD3Fe80F6C";
+  const autoToken = "0xD9b4940B748d8C892D3112f78f15EA37f5712159";
+  const usdc = "0x397f46e835cbee65228c9af441c48eea50a4ca37";
   const usdt = "0x9bd522cc85bd1bd6d069d5e273e46ccfee905493";
+  const govAddress = "0x28493E97F18b1b4Bb0b95507a876ED458AF27494"
+  const autoTokenFarm = "0x84600C18ca1B7EC74a5369F593e30d4F22B007ee"
+  const wantAddress = "0xf26cdd542d489c0eb37e8a84a60c6961beca807a"; // usdt-DAI LP token in Capricorn Swap
+  const masterChefFarmAdd = "0x6273638e3be5770851e23bfce27d69592bedcd2c"
+  const routerAdd = "0x14C02Dc9B29aC28e852F740CBA6722BC7308fEB8"
+  const rewardAdd = "0x7368ea4b5A7204CFe592d096D4CdC8832f754027"
+  const burnAdd = "0x7368ea4b5A7204CFe592d096D4CdC8832f754027"
   const addresses = [wcube, 
-  "0x35bfEf07bbd0eccb33137a4F6701c77E210bdd26", // govAddress
-  "0x0e3DA980c870F2436396D97231f47E7a92160029", // autoFarm or TENFIFarm
-  tenfi, 
-  "0x93247d3a88c7474bca9563ed40c5f31800bc623a", // want address 
-  usdt, 
-  wcube, 
-  corn, 
-  "0x6273638e3be5770851e23bfce27d69592bedcd2c", // Masterchef (farm) address
-  "0x14C02Dc9B29aC28e852F740CBA6722BC7308fEB8", // router address
-  "0x7748329C48FE9F5Dc50f5858E174Dbc7A037117D", // reward address
-  "0x7748329C48FE9F5Dc50f5858E174Dbc7A037117D"] // burn address
+  govAddress, // govAddress
+  autoTokenFarm, // autoFarm or autoTokenFarm
+  autoToken, 
+  wantAddress, // want address 
+  usdt, //token 0
+  wcube, //token 1
+  corn, //earnedAddress
+  masterChefFarmAdd, // Masterchef (farm) address
+  routerAdd, // router address
+  rewardAdd, // reward address
+  burnAdd] // burn address
 
-  const earnedToAutoPath = [corn, wcube, tenfi]
+  const earnedToAutoPath = [corn, wcube, autoToken]
 
   const earnedToToken0Path = [corn, wcube, usdt]
 
-  const earnedToToken1Path = [corn, wcube];
+  const earnedToToken1Path = [corn, wcube, dai];
 
   const token0ToEarnedPath = [usdt, wcube, corn]
 
-  const token1ToEarnedPath = [wcube, corn]
+  const token1ToEarnedPath = [dai, wcube, corn]
 
   const StratPCS = await strat.deploy(addresses, 5, false, false, false, earnedToAutoPath, earnedToToken0Path, earnedToToken1Path, token0ToEarnedPath, token1ToEarnedPath, 0, 0 ,0, 0);
 
@@ -42,7 +47,7 @@ async function main() {
 
   console.log("StratX2 PCS deployed to:", StratPCS.address);
 
-//   address: { "0": "0x93247d3a88C7474BCA9563eD40C5F31800bc623a", "1": "0", "2": "7405200", "3": "0", "4": "0x7cdCd748d59bb1f55E0bBdaa7a6BbDd9d981af3D", "want": "0x93247d3a88C7474BCA9563eD40C5F31800bc623a", "allocPoint": "0", "lastRewardBlock": "7405200", "accTENFIPerShare": "0", "strat": "0x7cdCd748d59bb1f55E0bBdaa7a6BbDd9d981af3D" }
+//   address: { "0": "0x93247d3a88C7474BCA9563eD40C5F31800bc623a", "1": "0", "2": "7405200", "3": "0", "4": "0x7cdCd748d59bb1f55E0bBdaa7a6BbDd9d981af3D", "want": "0x93247d3a88C7474BCA9563eD40C5F31800bc623a", "allocPoint": "0", "lastRewardBlock": "7405200", "accautoTokenPerShare": "0", "strat": "0x7cdCd748d59bb1f55E0bBdaa7a6BbDd9d981af3D" }
 }
 
 main().catch((error) => {

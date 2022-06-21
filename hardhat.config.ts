@@ -15,7 +15,7 @@ const config: HardhatUserConfig = {
       url: "https://http-testnet.cube.network",
       chainId: 1819,
       gasPrice: 20000000000,
-      accounts: {mnemonic: process.env.RI_AV_MNEMONIC}
+      accounts: {mnemonic: process.env.MNEMONIC}
     }
   },
   paths: {

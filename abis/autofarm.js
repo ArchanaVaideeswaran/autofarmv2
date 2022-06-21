@@ -1,553 +1,553 @@
 module.exports = {
-    address: "0x3eA566Fa38f95ba8c4E849F5f688Ab613591d150",
-    abi: [
+  address: "0x84600C18ca1B7EC74a5369F593e30d4F22B007ee",
+  abi: [
+    {
+      anonymous: false,
+      inputs: [
         {
-            "anonymous": false,
-            "inputs": [
-                {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "user",
-                    "type": "address"
-                },
-                {
-                    "indexed": true,
-                    "internalType": "uint256",
-                    "name": "pid",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "amount",
-                    "type": "uint256"
-                }
-            ],
-            "name": "Deposit",
-            "type": "event"
+          indexed: true,
+          internalType: "address",
+          name: "user",
+          type: "address",
         },
         {
-            "anonymous": false,
-            "inputs": [
-                {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "user",
-                    "type": "address"
-                },
-                {
-                    "indexed": true,
-                    "internalType": "uint256",
-                    "name": "pid",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "amount",
-                    "type": "uint256"
-                }
-            ],
-            "name": "EmergencyWithdraw",
-            "type": "event"
+          indexed: true,
+          internalType: "uint256",
+          name: "pid",
+          type: "uint256",
         },
         {
-            "anonymous": false,
-            "inputs": [
-                {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "previousOwner",
-                    "type": "address"
-                },
-                {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "newOwner",
-                    "type": "address"
-                }
-            ],
-            "name": "OwnershipTransferred",
-            "type": "event"
+          indexed: false,
+          internalType: "uint256",
+          name: "amount",
+          type: "uint256",
+        },
+      ],
+      name: "Deposit",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "address",
+          name: "user",
+          type: "address",
         },
         {
-            "anonymous": false,
-            "inputs": [
-                {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "user",
-                    "type": "address"
-                },
-                {
-                    "indexed": true,
-                    "internalType": "uint256",
-                    "name": "pid",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "amount",
-                    "type": "uint256"
-                }
-            ],
-            "name": "Withdraw",
-            "type": "event"
+          indexed: true,
+          internalType: "uint256",
+          name: "pid",
+          type: "uint256",
         },
         {
-            "inputs": [],
-            "name": "AUTO",
-            "outputs": [
-                {
-                    "internalType": "address",
-                    "name": "",
-                    "type": "address"
-                }
-            ],
-            "stateMutability": "view",
-            "type": "function"
+          indexed: false,
+          internalType: "uint256",
+          name: "amount",
+          type: "uint256",
+        },
+      ],
+      name: "EmergencyWithdraw",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "address",
+          name: "previousOwner",
+          type: "address",
         },
         {
-            "inputs": [],
-            "name": "AUTOMaxSupply",
-            "outputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                }
-            ],
-            "stateMutability": "view",
-            "type": "function"
+          indexed: true,
+          internalType: "address",
+          name: "newOwner",
+          type: "address",
+        },
+      ],
+      name: "OwnershipTransferred",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "address",
+          name: "user",
+          type: "address",
         },
         {
-            "inputs": [],
-            "name": "AUTOPerBlock",
-            "outputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                }
-            ],
-            "stateMutability": "view",
-            "type": "function"
+          indexed: true,
+          internalType: "uint256",
+          name: "pid",
+          type: "uint256",
         },
         {
-            "inputs": [],
-            "name": "AUTOv2",
-            "outputs": [
-                {
-                    "internalType": "address",
-                    "name": "",
-                    "type": "address"
-                }
-            ],
-            "stateMutability": "view",
-            "type": "function"
+          indexed: false,
+          internalType: "uint256",
+          name: "amount",
+          type: "uint256",
+        },
+      ],
+      name: "Withdraw",
+      type: "event",
+    },
+    {
+      inputs: [],
+      name: "AUTO",
+      outputs: [
+        {
+          internalType: "address",
+          name: "",
+          type: "address",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [],
+      name: "AUTOMaxSupply",
+      outputs: [
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [],
+      name: "AUTOPerBlock",
+      outputs: [
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [],
+      name: "AUTOv2",
+      outputs: [
+        {
+          internalType: "address",
+          name: "",
+          type: "address",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "uint256",
+          name: "_allocPoint",
+          type: "uint256",
         },
         {
-            "inputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "_allocPoint",
-                    "type": "uint256"
-                },
-                {
-                    "internalType": "contract IERC20",
-                    "name": "_want",
-                    "type": "address"
-                },
-                {
-                    "internalType": "bool",
-                    "name": "_withUpdate",
-                    "type": "bool"
-                },
-                {
-                    "internalType": "address",
-                    "name": "_strat",
-                    "type": "address"
-                }
-            ],
-            "name": "add",
-            "outputs": [],
-            "stateMutability": "nonpayable",
-            "type": "function"
+          internalType: "contract IERC20",
+          name: "_want",
+          type: "address",
         },
         {
-            "inputs": [],
-            "name": "burnAddress",
-            "outputs": [
-                {
-                    "internalType": "address",
-                    "name": "",
-                    "type": "address"
-                }
-            ],
-            "stateMutability": "view",
-            "type": "function"
+          internalType: "bool",
+          name: "_withUpdate",
+          type: "bool",
         },
         {
-            "inputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "_pid",
-                    "type": "uint256"
-                },
-                {
-                    "internalType": "uint256",
-                    "name": "_wantAmt",
-                    "type": "uint256"
-                }
-            ],
-            "name": "deposit",
-            "outputs": [],
-            "stateMutability": "nonpayable",
-            "type": "function"
+          internalType: "address",
+          name: "_strat",
+          type: "address",
+        },
+      ],
+      name: "add",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [],
+      name: "burnAddress",
+      outputs: [
+        {
+          internalType: "address",
+          name: "",
+          type: "address",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "uint256",
+          name: "_pid",
+          type: "uint256",
         },
         {
-            "inputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "_pid",
-                    "type": "uint256"
-                }
-            ],
-            "name": "emergencyWithdraw",
-            "outputs": [],
-            "stateMutability": "nonpayable",
-            "type": "function"
+          internalType: "uint256",
+          name: "_wantAmt",
+          type: "uint256",
+        },
+      ],
+      name: "deposit",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "uint256",
+          name: "_pid",
+          type: "uint256",
+        },
+      ],
+      name: "emergencyWithdraw",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "uint256",
+          name: "_from",
+          type: "uint256",
         },
         {
-            "inputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "_from",
-                    "type": "uint256"
-                },
-                {
-                    "internalType": "uint256",
-                    "name": "_to",
-                    "type": "uint256"
-                }
-            ],
-            "name": "getMultiplier",
-            "outputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                }
-            ],
-            "stateMutability": "view",
-            "type": "function"
+          internalType: "uint256",
+          name: "_to",
+          type: "uint256",
+        },
+      ],
+      name: "getMultiplier",
+      outputs: [
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "_token",
+          type: "address",
         },
         {
-            "inputs": [
-                {
-                    "internalType": "address",
-                    "name": "_token",
-                    "type": "address"
-                },
-                {
-                    "internalType": "uint256",
-                    "name": "_amount",
-                    "type": "uint256"
-                }
-            ],
-            "name": "inCaseTokensGetStuck",
-            "outputs": [],
-            "stateMutability": "nonpayable",
-            "type": "function"
+          internalType: "uint256",
+          name: "_amount",
+          type: "uint256",
+        },
+      ],
+      name: "inCaseTokensGetStuck",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [],
+      name: "massUpdatePools",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "uint256",
+          name: "_inputAmt",
+          type: "uint256",
+        },
+      ],
+      name: "migrateToAUTOv2",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [],
+      name: "owner",
+      outputs: [
+        {
+          internalType: "address",
+          name: "",
+          type: "address",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [],
+      name: "ownerAUTOReward",
+      outputs: [
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "uint256",
+          name: "_pid",
+          type: "uint256",
         },
         {
-            "inputs": [],
-            "name": "massUpdatePools",
-            "outputs": [],
-            "stateMutability": "nonpayable",
-            "type": "function"
+          internalType: "address",
+          name: "_user",
+          type: "address",
+        },
+      ],
+      name: "pendingAUTO",
+      outputs: [
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
+        },
+      ],
+      name: "poolInfo",
+      outputs: [
+        {
+          internalType: "contract IERC20",
+          name: "want",
+          type: "address",
         },
         {
-            "inputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "_inputAmt",
-                    "type": "uint256"
-                }
-            ],
-            "name": "migrateToAUTOv2",
-            "outputs": [],
-            "stateMutability": "nonpayable",
-            "type": "function"
+          internalType: "uint256",
+          name: "allocPoint",
+          type: "uint256",
         },
         {
-            "inputs": [],
-            "name": "owner",
-            "outputs": [
-                {
-                    "internalType": "address",
-                    "name": "",
-                    "type": "address"
-                }
-            ],
-            "stateMutability": "view",
-            "type": "function"
+          internalType: "uint256",
+          name: "lastRewardBlock",
+          type: "uint256",
         },
         {
-            "inputs": [],
-            "name": "ownerAUTOReward",
-            "outputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                }
-            ],
-            "stateMutability": "view",
-            "type": "function"
+          internalType: "uint256",
+          name: "accAUTOPerShare",
+          type: "uint256",
         },
         {
-            "inputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "_pid",
-                    "type": "uint256"
-                },
-                {
-                    "internalType": "address",
-                    "name": "_user",
-                    "type": "address"
-                }
-            ],
-            "name": "pendingAUTO",
-            "outputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                }
-            ],
-            "stateMutability": "view",
-            "type": "function"
+          internalType: "address",
+          name: "strat",
+          type: "address",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [],
+      name: "poolLength",
+      outputs: [
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [],
+      name: "renounceOwnership",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "uint256",
+          name: "_pid",
+          type: "uint256",
         },
         {
-            "inputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                }
-            ],
-            "name": "poolInfo",
-            "outputs": [
-                {
-                    "internalType": "contract IERC20",
-                    "name": "want",
-                    "type": "address"
-                },
-                {
-                    "internalType": "uint256",
-                    "name": "allocPoint",
-                    "type": "uint256"
-                },
-                {
-                    "internalType": "uint256",
-                    "name": "lastRewardBlock",
-                    "type": "uint256"
-                },
-                {
-                    "internalType": "uint256",
-                    "name": "accAUTOPerShare",
-                    "type": "uint256"
-                },
-                {
-                    "internalType": "address",
-                    "name": "strat",
-                    "type": "address"
-                }
-            ],
-            "stateMutability": "view",
-            "type": "function"
+          internalType: "uint256",
+          name: "_allocPoint",
+          type: "uint256",
         },
         {
-            "inputs": [],
-            "name": "poolLength",
-            "outputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                }
-            ],
-            "stateMutability": "view",
-            "type": "function"
+          internalType: "bool",
+          name: "_withUpdate",
+          type: "bool",
+        },
+      ],
+      name: "set",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "uint256",
+          name: "_pid",
+          type: "uint256",
         },
         {
-            "inputs": [],
-            "name": "renounceOwnership",
-            "outputs": [],
-            "stateMutability": "nonpayable",
-            "type": "function"
+          internalType: "address",
+          name: "_user",
+          type: "address",
+        },
+      ],
+      name: "stakedWantTokens",
+      outputs: [
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [],
+      name: "startBlock",
+      outputs: [
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [],
+      name: "totalAllocPoint",
+      outputs: [
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "newOwner",
+          type: "address",
+        },
+      ],
+      name: "transferOwnership",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "uint256",
+          name: "_pid",
+          type: "uint256",
+        },
+      ],
+      name: "updatePool",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
         },
         {
-            "inputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "_pid",
-                    "type": "uint256"
-                },
-                {
-                    "internalType": "uint256",
-                    "name": "_allocPoint",
-                    "type": "uint256"
-                },
-                {
-                    "internalType": "bool",
-                    "name": "_withUpdate",
-                    "type": "bool"
-                }
-            ],
-            "name": "set",
-            "outputs": [],
-            "stateMutability": "nonpayable",
-            "type": "function"
+          internalType: "address",
+          name: "",
+          type: "address",
+        },
+      ],
+      name: "userInfo",
+      outputs: [
+        {
+          internalType: "uint256",
+          name: "shares",
+          type: "uint256",
         },
         {
-            "inputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "_pid",
-                    "type": "uint256"
-                },
-                {
-                    "internalType": "address",
-                    "name": "_user",
-                    "type": "address"
-                }
-            ],
-            "name": "stakedWantTokens",
-            "outputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                }
-            ],
-            "stateMutability": "view",
-            "type": "function"
+          internalType: "uint256",
+          name: "rewardDebt",
+          type: "uint256",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "uint256",
+          name: "_pid",
+          type: "uint256",
         },
         {
-            "inputs": [],
-            "name": "startBlock",
-            "outputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                }
-            ],
-            "stateMutability": "view",
-            "type": "function"
+          internalType: "uint256",
+          name: "_wantAmt",
+          type: "uint256",
         },
+      ],
+      name: "withdraw",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
         {
-            "inputs": [],
-            "name": "totalAllocPoint",
-            "outputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                }
-            ],
-            "stateMutability": "view",
-            "type": "function"
+          internalType: "uint256",
+          name: "_pid",
+          type: "uint256",
         },
-        {
-            "inputs": [
-                {
-                    "internalType": "address",
-                    "name": "newOwner",
-                    "type": "address"
-                }
-            ],
-            "name": "transferOwnership",
-            "outputs": [],
-            "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
-            "inputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "_pid",
-                    "type": "uint256"
-                }
-            ],
-            "name": "updatePool",
-            "outputs": [],
-            "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
-            "inputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                },
-                {
-                    "internalType": "address",
-                    "name": "",
-                    "type": "address"
-                }
-            ],
-            "name": "userInfo",
-            "outputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "shares",
-                    "type": "uint256"
-                },
-                {
-                    "internalType": "uint256",
-                    "name": "rewardDebt",
-                    "type": "uint256"
-                }
-            ],
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "inputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "_pid",
-                    "type": "uint256"
-                },
-                {
-                    "internalType": "uint256",
-                    "name": "_wantAmt",
-                    "type": "uint256"
-                }
-            ],
-            "name": "withdraw",
-            "outputs": [],
-            "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
-            "inputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "_pid",
-                    "type": "uint256"
-                }
-            ],
-            "name": "withdrawAll",
-            "outputs": [],
-            "stateMutability": "nonpayable",
-            "type": "function"
-        }
-    ]
-}
+      ],
+      name: "withdrawAll",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+  ],
+};
