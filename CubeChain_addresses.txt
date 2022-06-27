@@ -1,0 +1,22 @@
+Cube Chain addresses:-
+
+Corn :: 0x1cc23571ec9dc62b8f80bf5c5e13ea035ce0c49b
+USDT :: 0x9bd522cc85bd1bd6d069d5e273e46ccfee905493
+WCUBE:: 0xb9164670a2f388d835b868b3d0d441fa1be5bb00
+USDT :: 0x9bd522cc85bd1bd6d069d5e273e46ccfee905493
+USDC :: 0x397f46e835cbee65228c9af441c48eea50a4ca37
+ETH  :: 0xbc66b3895a1ed852b877b2ba8f42e79a846eb732
+DAI  :: 0xdf443238d7b80446c3b3e76a556a354670da0205
+WBTC :: 0xbd996d73ffdd2e2393cd0a339de3748ca508b625
+
+
+USDT - DAI: 0x3d7df35d06e1746900be3725d201523189ae4ce1
+Corn - USDT: 0x363348549abbc642682e2a6291ded01aacabf639
+USDT-WCUBE LP :: 0x93247d3a88c7474bca9563ed40c5f31800bc623a
+USDC-DAI LP :: 0xf26cdd542d489c0eb37e8a84a60c6961beca807a
+USDC-USDT :: 0x7217F096Fce9F81eF25eA7d9cEa4Bb7b2363b597
+
+MasterChef Farm address of Cube chain :: "0x6273638e3be5770851e23bfce27d69592bedcd2c"
+Capricorn Swap Router address = "0x14C02Dc9B29aC28e852F740CBA6722BC7308fEB8" from here u can get factory address as well.
+Factory Contract of Cap Swap : 0x7a1eba426aa389aac9b410cdfe3cef5d344e043f
+We can use the getPair function to get the LP address of a pair from the contract

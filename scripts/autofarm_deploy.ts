@@ -10,21 +10,22 @@ async function main() {
   const [signer] = await ethers.getSigners();
   console.log("Deployer: ", signer.address);
 
-  // const AutoFarm = await ethers.getContractFactory("AutoFarmV2");
-  // const autoFarm = await AutoFarm.deploy();
+  const AutoFarm = await ethers.getContractFactory("AutoFarmV2");
+  const autoFarm = await AutoFarm.deploy();
 
-  // await autoFarm.deployed();
+  await autoFarm.deployed();
 
-  // console.log("AutoFarm deployed to:", autoFarm.address);
+  console.log("AutoFarm deployed to:", autoFarm.address);
 
   const Auto = (await ethers.getContractAt(autotoken.abi, autotoken.address)) as AUTOv2;
 
   let owner = await Auto.owner();
   console.log("owner", owner)
   
-  // await Auto.transferOwnership(autoFarm.address);
-  // owner = await Auto.owner();
-  // console.log("New owner", owner);
+  const tx = await Auto.transferOwnership(autoFarm.address);
+  await tx.wait();
+  owner = await Auto.owner();
+  console.log("New owner", owner);
   
 }
 
