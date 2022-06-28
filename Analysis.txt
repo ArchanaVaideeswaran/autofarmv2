@@ -10,7 +10,8 @@ The Ownership of StratX2PCS is transferred to the AutoFarm automatically within 
 (we need not change it again!)
 
 -> MOST IMP :- To create any pool, we need the Paths to be present in Capricorn swap.
-
+-> To know the Route, we can use CapSwap and in swap functionality provide the tokens we want to know the path.
+We can find the path in the Route feild.
 
 Methods in AutoFarmV2.sol Contract:
 
