@@ -6,7 +6,16 @@ import { config as dotEnvConfig } from "dotenv";
 dotEnvConfig();
 
 const config: HardhatUserConfig = {
-  solidity: "0.6.12",
+  solidity: {
+    version: "0.8.0",
+    settings: {
+      optimizer: {
+        enabled: true,
+        runs: 200,
+      },
+    },
+  },
+  
   networks: {
     hardhat: {
       // forking: { url: process.env.ALCHEMY_MAINNET_API || "", blockNumber: 14877894 },
@@ -18,6 +27,7 @@ const config: HardhatUserConfig = {
       accounts: {mnemonic: process.env.MNEMONIC}
     }
   },
+  
   paths: {
     sources: "./contracts/",
     tests: "./test",

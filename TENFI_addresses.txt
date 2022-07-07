@@ -1,0 +1,21 @@
+My new AutoFarm deployed based on the new updated 0.8 sol code!
+
+TENFI_Token = 0x2Ab5CB73931F21f5727e9d5b4fc646CD36964650
+TENFI_Farm = 0xc752e374e42CeECcB534cEd1493c79F8ef7f09F2
+TENFI_Lock = 0x830DCBe1a8CEd5E4F7F9ddECf83da0598dCeD1e8
+
+//not working, bcoz we must use diff strat for earned token. Or else we get the sub overflow in _farm()
+CORN(LP: 0x1cc23571ec9dc62b8f80bf5c5e13ea035ce0c49b):: pid 0:: stratX2PCS:
+0x03adc804B7304213e80994BD644692bc54F45A17
+
+//Working. Deployed using Sahil's constructor arguments
+CORN-ETH (0xffd696140bb18dcac8ed75ba17f209c2e4cdab77) :: pid 1 :: StratX2PCS:
+0xA94Ad6BbA3434442D2ABCCC50eb384d05dC0117d
+
+//Working. Deployed using My constructor arguments
+CORN-ETH (0xffd696140bb18dcac8ed75ba17f209c2e4cdab77) :: pid 2 :: StratX2PCS:
+0x7a5C76b431803046Bd256cE42C1e49f697BC97eC
+
+//Working. Deployed using the strat for CORN.
+CORN(LP: 0x1cc23571ec9dc62b8f80bf5c5e13ea035ce0c49b):: pid 3:: stratX2PCS:
+0x43d5Cf7176603d76631938657e93d4063e6c1503

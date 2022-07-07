@@ -1,20 +1,25 @@
 import { ethers } from "hardhat";
-const autotoken = require("../abis/auto.js");
+// const autotoken = require("../abis/auto.js");
 
 async function main() {
   const [signer] = await ethers.getSigners();
   console.log("Deployer: ", signer.address);
-  const strat = await ethers.getContractFactory("StratX2_PCS");
+  //const strat = await ethers.getContractFactory("StartX2_PCS");
+  // const strat = await ethers.getContractFactory("TENFIStrategy_PCS");
+  const strat = await ethers.getContractFactory("TENFIStrategy_PCS_CORN");
   const dai ="0xdf443238d7b80446c3b3e76a556a354670da0205";
   const tusd = "";
   const corn = "0x1cc23571ec9dc62b8f80bf5c5e13ea035ce0c49b";
   const wcube = "0xb9164670a2f388d835b868b3d0d441fa1be5bb00";
-  const autoToken = "0xD97025fE249D5EF553a228D1835800cf0CD79BE9";
+  // const autoToken = "0xD97025fE249D5EF553a228D1835800cf0CD79BE9";
+  const TENFI_token = "0x2Ab5CB73931F21f5727e9d5b4fc646CD36964650";
   const usdc = "0x397f46e835cbee65228c9af441c48eea50a4ca37";
   const usdt = "0x9bd522cc85bd1bd6d069d5e273e46ccfee905493";
   const eth = "0xbc66b3895a1ed852b877b2ba8f42e79a846eb732";
-  const govAddress = "0x10314AF57a74791a1670073063625D186F46571E"
-  const autoTokenFarm = "0x80ec21A12431481eF0E166e216e5ae8F5CC8eCc2"
+  //const govAddress = "0x10314AF57a74791a1670073063625D186F46571E";
+  const TENFI_timelock = "0x830DCBe1a8CEd5E4F7F9ddECf83da0598dCeD1e8";
+  //const autoTokenFarm = "0x80ec21A12431481eF0E166e216e5ae8F5CC8eCc2";
+  const TENFI_Farm = "0xc752e374e42CeECcB534cEd1493c79F8ef7f09F2";
   const wbtc = "0xbd996d73ffdd2e2393cd0a339de3748ca508b625";
   const want_USDC_USDT = "0x7217F096Fce9F81eF25eA7d9cEa4Bb7b2363b597"; // pid10 in masterchef
   const want_CORN = "0x1cc23571ec9dc62b8f80bf5c5e13ea035ce0c49b"; //pid 0 in masterchef
@@ -27,21 +32,25 @@ async function main() {
   const masterChefFarmAdd = "0x6273638e3be5770851e23bfce27d69592bedcd2c";
   const routerAdd = "0x14C02Dc9B29aC28e852F740CBA6722BC7308fEB8";
   const rewardAdd = "0x7368ea4b5A7204CFe592d096D4CdC8832f754027";
-  const burnAdd = ethers.constants.AddressZero;
+  const burnAdd = "0x000000000000000000000000000000000000dead";
+  const zeroAdd = "0x0000000000000000000000000000000000000000";
   const addresses = [wcube, 
-  govAddress, // govAddress
-  autoTokenFarm, // autoFarm or autoTokenFarm
-  autoToken, 
+  TENFI_timelock,
+  //govAddress, // govAddress
+  TENFI_Farm,
+  //autoTokenFarm, // autoFarm or autoTokenFarm
+  TENFI_token,
+  //autoToken, 
   want_CORN, // want address 
-  burnAdd, //token 0
-  burnAdd, //token 1
+  zeroAdd, //token 0
+  zeroAdd, //token 1
   corn, //earnedAddress
   masterChefFarmAdd, // Masterchef (farm) address
   routerAdd, // router address
   rewardAdd, // reward address
   burnAdd] // burn address
 
-  const earnedToAutoPath = [corn, autoToken]
+  const earnedToAutoPath = [corn, TENFI_token]
 
   const earnedToToken0Path:any = [];// = [corn];
 
@@ -53,8 +62,32 @@ async function main() {
   const token1ToEarnedPath :any = [];//
   
   //here give the pid of MAsterchef farm
-  const StratPCS = await strat.deploy(addresses, 0, true, true, true, earnedToAutoPath, earnedToToken0Path, earnedToToken1Path, token0ToEarnedPath, token1ToEarnedPath, 0, 0 ,0, 0);
-
+  //const StratPCS = await strat.deploy(addresses, 0, true, true, true, earnedToAutoPath, earnedToToken0Path, earnedToToken1Path, token0ToEarnedPath, token1ToEarnedPath, 0, 0 ,0, 0);
+  const StratPCS = await strat.deploy(addresses, 0, true, false, true, earnedToAutoPath, earnedToToken0Path, earnedToToken1Path, token0ToEarnedPath, token1ToEarnedPath);  
+  // const StratPCS = await strat.deploy(["0xb9164670a2f388d835b868b3d0d441fa1be5bb00",
+  // TENFI_timelock,
+  // TENFI_Farm,
+  // TENFI_token,
+  // "0xffd696140bb18dcac8ed75ba17f209c2e4cdab77",//want_Corn-eth
+  // "0x1cc23571ec9dc62b8f80bf5c5e13ea035ce0c49b", //token 0
+  // "0xbc66b3895a1ed852b877b2ba8f42e79a846eb732", //token 1
+  // "0x1cc23571ec9dc62b8f80bf5c5e13ea035ce0c49b", //earned address
+  // "0x6273638e3be5770851e23bfce27d69592bedcd2c", // MasterChef Farm
+  // "0x14C02Dc9B29aC28e852F740CBA6722BC7308fEB8", // Router Add
+  // rewardAdd,                                    //Reward add
+  // "0x000000000000000000000000000000000000dead"], // Burn address
+  // 6,
+  // false,
+  // false,
+  // true,
+  // ["0x1cc23571ec9dc62b8f80bf5c5e13ea035ce0c49b",
+  // "0xa3DD6beDb8A7CA5d459Ccc488b7Fd0dD3Fe80F6C"], //earned to TENFI_token
+  // [], //earned to token 0 (corn-corn)
+  // ["0x1cc23571ec9dc62b8f80bf5c5e13ea035ce0c49b",
+  // "0xbc66b3895a1ed852b877b2ba8f42e79a846eb732"], //earned to token1 (corn-eth)
+  // [],// t0 to earned
+  // ["0xb9164670a2f388d835b868b3d0d441fa1be5bb00",
+  // "0xbc66b3895a1ed852b877b2ba8f42e79a846eb732"]) //t1 to earned (eth - corn)
   await StratPCS.deployed();
 
   console.log("StratX2 PCS deployed to:", StratPCS.address);

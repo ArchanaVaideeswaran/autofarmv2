@@ -1,16 +1,16 @@
 import { ethers } from "hardhat";
-import { AUTOv2 } from "../src/types/AUTOv2";
+import { TenFI } from "../src/types/contracts/TENFI_Token.sol";
 
 async function main() {
-  const Auto = await ethers.getContractFactory("AUTOv2");
-  const auto = await Auto.deploy() as AUTOv2;
+  const TENFI_TokenFactory = await ethers.getContractFactory("TENFI_Token");
+  const TENFI_TokenContract = await TENFI_TokenFactory.deploy() as TenFI;
   const [signer] = await ethers.getSigners();
-  await auto.deployed();
+  await TENFI_TokenContract.deployed();
 
-  console.log("AUTO token deployed to:", auto.address);
+  console.log("AUTO token deployed to:", TENFI_TokenContract.address);
   const amt1 = ethers.utils.parseEther("10000");
-  await auto.mint(signer.address,amt1 );
-  await auto.mint( "0x7748329C48FE9F5Dc50f5858E174Dbc7A037117D", amt1);
+  await TENFI_TokenContract.mint(signer.address,amt1 );
+  await TENFI_TokenContract.mint( "0x7368ea4b5A7204CFe592d096D4CdC8832f754027", amt1);
   
 }
 

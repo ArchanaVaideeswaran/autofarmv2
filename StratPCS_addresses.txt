@@ -38,3 +38,9 @@ CORN(LP: 0x1cc23571ec9dc62b8f80bf5c5e13ea035ce0c49b):: pid 11:: stratX2PCS:
 //This is working!
 CORN(LP: 0x1cc23571ec9dc62b8f80bf5c5e13ea035ce0c49b):: pid 12:: stratX2PCS:
 0xa7BbBCf654b9775C75D243110F18E862fdd16D83
+
+//Using the TENFI strategy!
+CORN(LP: 0x1cc23571ec9dc62b8f80bf5c5e13ea035ce0c49b):: pid 13:: stratX2PCS:
+0x27D23ff2d6DFD67024f00F5bfeD6D299abe77351
+
+pid = 15 (CORN) in Sahil's Farm address, and TENFI_STrat = 0x9C058E8B89474072c20E9244B961A3dEBe63De93
